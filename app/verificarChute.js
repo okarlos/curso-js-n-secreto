@@ -3,7 +3,7 @@ function verificaChute(chute) {
 
     if (chuteInvalido(numero)) {
         elementoChute.innerHTML += (
-            `<div>Chute inválido</div>`
+            `<div>Chute inválido!</div>`
         )
         return
     }
@@ -23,13 +23,22 @@ function verificaChute(chute) {
         `
     } else if (numero > numeroSecreto) {
         elementoChute.innerHTML += `
-            <div>O número secreto é menor <i class="fa-solid fa-down-long"></i></div>
+            <div><i class="fa-solid fa-down-long"></i> O número secreto é menor <i class="fa-solid fa-down-long"></i></div>
         `
     } else {
         elementoChute.innerHTML += `
-            <div>O número secreto é maior <i class="fa-solid fa-up-long"></i></div>
+            <div><i class="fa-solid fa-up-long"></i> O número secreto é maior <i class="fa-solid fa-up-long"></i></div>
         `
     }
+
+    const margemErro = 5;
+
+    if (Math.abs(numero - numeroSecreto) <= margemErro) {
+      elementoChute.innerHTML += `
+        <div>🔥 Tá quente! 🔥</div>
+      `;
+    }
+
 }
 
 function chuteInvalido(numero) {
