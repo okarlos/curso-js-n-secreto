@@ -10,7 +10,9 @@ function verificaChute(chute) {
 
     if (chuteFora(numero)) {
         elementoChute.innerHTML += (
-            `<div>Chute inválido, fale um número entre ${menorValor} e ${maiorValor}!</div>`
+            `<div class="dica"><i class="fa-solid fa-times-circle text-danger"></i>  
+            Chute inválido, fale um número entre ${menorValor} e ${maiorValor}! <i class="fa-solid fa-times-circle text-danger"></i>
+            </div>`
         )
         return
     }
@@ -19,21 +21,22 @@ function verificaChute(chute) {
         document.body.innerHTML = `
             <h2>Parabéns! Você acertou!</h2>
             <h3>O número secreto era ${numeroSecreto}.</h3>
-            <button id="jogar-novamente" class="btn-jogar">Jogar novamente</button>
+            <button id="jogar-novamente" class="btn-jogar"><span class="jogar">Jogar novamente</span> <i class="fas fa-redo"></i>
+            </button>
         `;
     } else if (numero > numeroSecreto) {
         elementoChute.innerHTML += `
-            <div><i class="fa-solid fa-down-long"></i> O número secreto é menor <i class="fa-solid fa-down-long"></i></div>
+            <div class="dica"><i class="fa-solid fa-down-long"></i> O número secreto é menor <i class="fa-solid fa-down-long"></i></div>
         `;
     } else {
         elementoChute.innerHTML += `
-            <div><i class="fa-solid fa-up-long"></i> O número secreto é maior <i class="fa-solid fa-up-long"></i></div>
+            <div class="dica"><i class="fa-solid fa-up-long"></i> O número secreto é maior <i class="fa-solid fa-up-long"></i></div>
         `;
     }
 
     if (Math.abs(numero - numeroSecreto) <= 5) {
         elementoChute.innerHTML += `
-            <div>🔥 Tá quente! 🔥</div>
+            <div class="dica">🔥 Tá quente! 🔥</div>
         `;
     }
 
