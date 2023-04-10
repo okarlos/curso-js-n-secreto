@@ -1,9 +1,9 @@
 # Jogo no Número Secreto
 
-**App para estudo de reconhecimento de voz com Javascript**
-- **Curso:** *JavaScript: validações e reconhecimento de voz, [Alura](https://cursos.alura.com.br/)*
-- **Professor:** *[Gui Lima](https://www.linkedin.com/in/guilherme-lima-developer/)*
+Este é um aplicativo desenvolvido com o objetivo de estudar o reconhecimento de voz em JavaScript, utilizando a Web Speech API. O curso que inspirou o desenvolvimento deste projeto foi o "JavaScript: validações e reconhecimento de voz" oferecido pela Alura, e ministrado pelo professor Guilherme Lima.
 
-Web Speech API - https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API
+O jogo consiste em adivinhar um número secreto, que é escolhido aleatoriamente pelo aplicativo. O usuário deve dizer um número em voz alta e o aplicativo informará se o número é maior ou menor que o número secreto. Além disso, foram adicionados recursos extras ao jogo, como a remoção de letras e espaços no reconhecimento de voz para validar apenas números e a adição de uma mensagem de proximidade quando o número falado está próximo do número correto.
 
-Publicação: https://numero-secreto-steel.vercel.app/
+Para tornar a experiência do usuário mais agradável, o CSS também foi adaptado para ser mais amigável ao uso em dispositivos móveis.
+
+Você pode experimentar o jogo no seguinte link: https://numero-secreto-steel.vercel.app/

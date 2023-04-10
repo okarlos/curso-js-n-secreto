@@ -8,26 +8,20 @@ recognition.start()
 
 recognition.addEventListener('result', onSpeak)
 
-// function onSpeak(e) {
-//     var chute = e.results[0][0].transcript
-//     console.log('Você disse:',chute)
-//     exibeChuteNaTela(chute)
-//     verificaChute(chute)
-// }
-
-function onSpeak(e) {
-    var chute = e.results[0][0].transcript;
-    var numeros = chute.replace(/[^0-9]/g, '').match(/\d+/g);
-    if (numeros && !isNaN(numeros.join(''))) {
-        console.log('Você disse:', numeros.join(''));
-        exibeChuteNaTela(numeros.join(''));
-        verificaChute(numeros.join(''));
+function onSpeak({ results }) {
+    const transcript = results[0][0].transcript;
+    const numeros = transcript.replace(/[^0-9]/g, '').match(/\d+/g) ?? [];
+    
+    if (numeros.length > 0) {
+      const numero = numeros.join('');
+      console.log(`Você disse: ${numero}`);
+      exibeChuteNaTela(numero);
+      verificaChute(numero);
     } else {
-        console.log('Você não disse um número.');
+      console.log('Você não disse um número.');
     }
-}
-
-
+  }
+  
 function exibeChuteNaTela(chute) {
     elementoChute.innerHTML = `
         <div>Você disse:</div>
