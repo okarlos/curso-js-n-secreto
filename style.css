@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
 
 :root {
     --font-family: 'Roboto', sans-serif;
-    --bg-color: #0AA1DD;
-    --primary-color: #E8F9FD;
+    --bg-color: #27292b;
+    --primary-color: #FFD700;
+    --aviso: #e3ebca;
 }
 
 body {
@@ -31,6 +31,11 @@ h2 {
 h3 {
     font-size: 2em;
     margin-top: 20px;
+    color: var(--aviso);
+}
+
+.ganhou {
+    animation: shake 0.5s infinite;
 }
 
 .mensagem {
@@ -44,6 +49,9 @@ h3 {
     font-size: 4em;
     padding: 10px;
     margin: 20px;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border-radius: 10px;
 }
 
 .btn-jogar {
@@ -53,45 +61,79 @@ h3 {
     border-radius: 5px;
     margin-top: 40px;
     width: 50%;
-    font-size: 20px;
+    font-size: 25px;
+    color: var(--bg-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-family: var(--font-family);
+}
+
+.btn-jogar:hover {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    border: solid 2px var(--primary-color);
+    padding: 13px 13px;
 }
 
 .dica {
     font-size: 1.35em;
     margin-top: 30px;
-    color: #b1dff1;
+    color: var(--aviso);
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(-5px) rotate(0deg);
+    }
+    5% {
+        transform: translateX(5px) rotate(5deg);
+    }
+    10% {
+        transform: translateX(-5px) rotate(-5deg);
+    }
+    15% {
+        transform: translateX(5px) rotate(0deg);
+    }
+    20% {
+        transform: translateX(0px) rotate(0deg);
+    }
+    100% {
+        transform: translateX(0px) rotate(0deg);
+    }
 }
 
 @media screen and (max-width: 480px) {
 
     body {
-      font-size: 16px;
-      line-height: 1.5;
-      margin: 0;
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 0;
     }
-  
+
     h1 {
-      font-size: 3em;
+        font-size: 3em;
     }
-  
+
     h2 {
-      font-size: 2.5em;
+        font-size: 2.5em;
     }
-  
+
     h3 {
-      font-size: 1.5em;
-      margin-top: 10px;
+        font-size: 1.5em;
+        margin-top: 10px;
     }
-  
+
     .mensagem {
-      font-size: 1.2em;
-      margin-top: 30px;
+        font-size: 1.2em;
+        margin-top: 30px;
     }
-  
+
     .box {
-      font-size: 2.5em;
-      padding: 5px;
-      margin: 10px;
+        font-size: 2.5em;
+        padding: 5px;
+        margin: 10px;
+        color: var(--bg-color);
+        border-radius: 10px;
     }
 
     .jogar {
